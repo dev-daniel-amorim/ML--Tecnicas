@@ -1,4 +1,4 @@
-# Validação Cruzada (Tipos)
+# Validação Cruzada
 
 Antes de entendermos validação cruzada, vamos falar sobre a divisão dos dados, após a etapa de pré-processamento dos dados vem a etapa de machine learning, a primeira ação do ML é a separação dos dados em:
 - Treino: Serve para treinar/ensinar o modelo;
