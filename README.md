@@ -17,3 +17,9 @@ Separar dados não é o suficiente para garantir um excelente modelo preditivo, 
 Como dissemos anteriormente esse modelo funciona para pequenas quantidades de dados, imagine uma situação em que, você valida seu modelo com acurácia de 80%,voçê informa ao seu chefe que aprova esses 80% e marca uma apresentação do seu modelo, na apresentação seu modelo apresenta uma acurácia de 63%? Isso pode acontecer pois em holdout tanto os dados de treino quanto os de teste não conhecem toda sua base de dados, para melhorar isso vamos para próximo método de validação cruzada, o k-fold.
 
 ## 2. Método K-fold
+Esse método consiste em dividir os nossos dados em K partes iguais (por default em 10 partes), para cada parte ele executa o HoldOut, garantindo assim que os dados de treino e teste "conhecam" toda nossa base de dados, depois realizauma média entre esses dados tornando mais acertiva nossa acurácia.
+
+![cross](https://user-images.githubusercontent.com/115194365/213271438-5c73732d-57d5-4618-84df-f7682b0ed67c.jpg)
+
+## 3. Método Leave-one-out (LOOCV)
+pouco usado custoso
