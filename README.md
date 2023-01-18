@@ -6,8 +6,7 @@ Antes de entendermos validação cruzada, vamos falar sobre a divisão dos dados
 
 Importante salientar que essa separação dos dados deve ser feita de maneira aleatória garantindo a diversidade dos dados. 
 
-# O que é a validação cruzada? <br>
-###(Cross Validation)
+# O que é a validação cruzada? <br> (Cross Validation)
 Separar dados não é o suficiente para garantir um excelente modelo preditivo, mas o modo como esses dados são separados, ou particionados, é que geram o que chamamos de Cross Validation, ou validação cruzada, em suma, vamos considerar que cross validation significa particionar dados, então esse modo de "particionar" pode ser dividido em:
 
 ## 1. Método HoldOut
