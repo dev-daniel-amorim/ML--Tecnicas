@@ -6,7 +6,9 @@ Após a etapa de pré-processamento dos dados vem a etapa de machine learning, a
 - Treino: Serve para treinar/ensinar o modelo;
 - Teste: Serve pra comprovar que nosso modelo funciona. Estes dados não participam do treinamento do nosso modelo.<br>
 
-Importante salientar que essa separação dos dados deve ser feita de maneira aleatória garantindo a diversidade dos dados.
+Importante salientar que essa separação dos dados deve ser feita de maneira aleatória garantindo a diversidade dos dados, o responsável por separar estas amostras são os algoritmos classificadores.<br>
+
+O classificador é quem garante que temos minimamente caracteristicas parecidas distribuídas entre treino e teste, supomos que nosso objetivo é classificar hipertensão, então o classificador vai garantir que tenha pelo menos 30% de amostras de pessoas com hipertensão distribuídas entre treino e teste. Vamos imaginar mais a fundo uma situação hipotética em que todas as caracteristicas de hipertensão tenham sido colocadas na tabela de teste, e não sobrou nenhum exemplo de hipertensão na tabela treino, como o algoritimo vai acertar quem é hipertenso? impossível!
 
 # Método HoldOut
 É o modo mais simples de particionamento, mais rápido e menos custoso em termos de processamento porém não é indicado para grandes volumes de dados pois a menor parte dos dados (teste) pode não ter dado o suficiente para determinar o todo (treino) diminuindo sua acurácia. Esse método consiste em separar os dados (por default) em 70% de treinamento e 30% teste, mas isso é relativo, vai depender do seu volume de dados e deve ser ajustado visando a melhoria na predição.
