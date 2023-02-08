@@ -4,7 +4,8 @@
 
 Após a etapa de pré-processamento dos dados vem a etapa de machine learning, a primeira ação do ML é a separação dos dados em:
 - Treino: Serve para treinar/ensinar o modelo;
-- Teste: Serve pra comprovar que nosso modelo funciona. Estes dados não participam do treinamento do nosso modelo.<br>
+- Validação: Há um segundo particionamento nos dados de treino, este serve para validar nosso modelo;
+- Teste: É o teste final pra comprovar que nosso modelo funciona. Estes dados não participam do treinamento do nosso modelo e só deve ser testado em ultima instância, ou seja, quando nosso modelo já foi escolhido e feito todo o ajuste de hiperparâmetros, antes disso jamais use os dados de teste para treinar o modelo pois nessa etapa ps dados estão muito sensíveis a overfitting, ocasionando um ajuste excessivo do modelo.<br>
 
 Importante salientar que essa separação dos dados deve ser feita de maneira aleatória garantindo a diversidade dos dados, o responsável por separar estas amostras são os algoritmos classificadores.<br>
 
