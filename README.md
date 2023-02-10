@@ -16,21 +16,22 @@ O classificador é quem garante que temos minimamente caracteristicas parecidas 
 
 ![holdout](https://user-images.githubusercontent.com/115194365/213264298-6d8b6a25-ef72-49ce-9aa0-b809aff380a4.jpg)
 
-Como dissemos anteriormente esse modelo funciona para pequenas quantidades de dados, imagine uma situação em que, você valida seu modelo com acurácia de 80%, e informa ao seu chefe que marca uma apresentação do seu modelo, na apresentação seu modelo apresenta uma acurácia de 63%? Isso vai acontecer! pois sua base de treino e teste muda a cada execução do código implicando em variação da acurácia. No link abaixo fiz uma comparação entre os metodos Holdout e cross validation, note que Holdout sofre variação da sua acurácia enquanto cross validation se mantem estável.
-
-[Clique aqui para ver o código fonte](https://github.com/dev-daniel-amorim/ML-Tecnicas/blob/main/Tecnicas%20de%20ML.ipynb)
+Como dissemos anteriormente esse modelo funciona para pequenas quantidades de dados, imagine uma situação em que, você valida seu modelo com acurácia de 80%, e informa ao seu chefe que marca uma apresentação do seu modelo, na apresentação seu modelo apresenta uma acurácia de 63%? Isso vai acontecer! pois sua base de treino e teste muda a cada execução do código implicando em variação da acurácia. No notebook deste tutorial (link no final) fiz uma comparação entre os metodos Holdout e cross validation, note que Holdout sofre variação da sua acurácia enquanto cross validation se mantem estável.
 
 # Cross Validation
 Antes de comprender validação cruzada vamos entender que separar dados em treino e teste não é o suficiente para garantir um excelente modelo preditivo, mas o modo como esses dados são separados, ou particionados, é que podem fazer a diferença na acertividade do modelo.<br>
-O Cross validation são métodos que visam melhorar a acertividade a partir do particionamento dos dados, diferentemente do holdout no cross validation são geradas X iterações nos dados de teste e treino, e o algoritmo faz uma média entre elas melhorando sua acurácia.
+O Cross validation separa os dados em várias partes e treina cada parte isoladamente, o modo como esses dados serão separados depende do método utilizado, vejamos:
 
 # Métodos de Cross Validation
 ## 1. Método K-fold
-Esse método consiste em dividir os nossos dados em K partes iguais (por default em 10 partes), para cada parte ele executa o HoldOut, garantindo assim que os dados de treino e teste "conhecam" toda nossa base de dados, depois realiza uma média entre esses dados tornando mais acertiva nossa acurácia.
+Esse método consiste em dividir os nosso dataset em K partes iguais (n_splits=K), para cada parte K ele executa o HoldOut (treino e teste), porém, aqui chamaremos a parte de teste de validação, como nome diz, é quem valida cada split, garantindo assim que os dados de treino e teste "conhecam" toda nossa base de dados, depois realiza uma média entre esses dados tornando mais acertiva e estável a nossa acurácia.
 
 <img src='cv.jpg'>
 
+Há quem diga, que essa validação não deve ser feita balanceamento dos dados, assim estariamos fazendo uma validação mais condizente com a realidade, pois na vida real os dados não estarão balanceados. [Clique aqui para saber mais sobre balanceamento de classes.](https://github.com/dev-daniel-amorim/DS-Balanceamento_de_classes/blob/main/README.md)
+
 ## 3. Método Leave-one-out (LOOCV)
-pouco usado custoso
+É um método de CV pouco usado e custoso por este motivo não é o foco deste tutorial.
 
-
+## Notebook
+[Clique para ver o notebook deste tutorial](https://github.com/dev-daniel-amorim/ML-Holdout_x_CV/blob/main/Holdout%20x%20Cross%20Validation.ipynb)
