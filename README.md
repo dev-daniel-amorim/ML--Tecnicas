@@ -4,11 +4,12 @@
 
 Após a etapa de pré-processamento dos dados vem a etapa de machine learning, a primeira ação do ML é a separação dos dados em:
 - Treino: Serve para treinar/ensinar o modelo;
-- Teste: Serve pra comprovar que nosso modelo funciona. Estes dados não participam do treinamento do nosso modelo.<br>
+- Validação (Outro particionamento dentro dos dados de treino no CV): Este serve para validar nosso modelo;
+- Teste: É o teste final pra comprovar que nosso modelo funciona. Estes dados não participam e nem deve de forma nenhuma participar do treinamento do nosso modelo e só deve ser testado em ultima instância, ou seja, quando nosso modelo já foi escolhido e quando ja estamos com todos os dados de hiperparâmetros em mãos, antes disso jamais use os dados de teste para treinar o modelo pois nessa etapa os dados estão muito sensíveis a overfitting, ocasionando um ajuste excessivo do modelo.<br>
 
 Importante salientar que essa separação dos dados deve ser feita de maneira aleatória garantindo a diversidade dos dados, o responsável por separar estas amostras são os algoritmos classificadores.<br>
 
-O classificador é quem garante que temos minimamente caracteristicas parecidas distribuídas entre treino e teste, supomos que nosso objetivo é classificar hipertensão, então o classificador vai garantir que tenha pelo menos 30% de amostras de pessoas com hipertensão distribuídas entre treino e teste. Vamos imaginar mais a fundo uma situação hipotética em que todas as caracteristicas de hipertensão tenham sido colocadas na tabela de teste, e não sobrou nenhum exemplo de hipertensão na tabela treino, como o algoritimo vai acertar quem é hipertenso? impossível!
+O classificador é quem garante que temos minimamente caracteristicas parecidas distribuídas entre treino e teste, supomos que nosso objetivo é classificar hipertensão, então o classificador vai garantir que tenha pelo menos 30% de amostras de pessoas com hipertensão distribuídas entre treino e teste. Vamos imaginar mais a fundo uma situação hipotética em que todas as caracteristicas de "pessoa com hipertensão" tenham sido colocadas nos dados de teste, e não sobrou nenhum exemplo de "pessoas com hipertensão" nos dados de treino, como o algoritimo vai acertar quem é hipertenso? impossível!
 
 # Método HoldOut
 É o modo mais simples de particionamento, mais rápido e menos custoso em termos de processamento porém não é indicado para grandes volumes de dados pois a menor parte dos dados (teste) pode não ter dado o suficiente para determinar o todo (treino) diminuindo sua acurácia. Esse método consiste em separar os dados (por default) em 70% de treinamento e 30% teste, mas isso é relativo, vai depender do seu volume de dados e deve ser ajustado visando a melhoria na predição.
@@ -27,7 +28,7 @@ O Cross validation são métodos que visam melhorar a acertividade a partir do p
 ## 1. Método K-fold
 Esse método consiste em dividir os nossos dados em K partes iguais (por default em 10 partes), para cada parte ele executa o HoldOut, garantindo assim que os dados de treino e teste "conhecam" toda nossa base de dados, depois realiza uma média entre esses dados tornando mais acertiva nossa acurácia.
 
-
+<img src='cv.jpg'>
 
 ## 3. Método Leave-one-out (LOOCV)
 pouco usado custoso
