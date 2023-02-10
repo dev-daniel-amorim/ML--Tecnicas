@@ -12,7 +12,7 @@ Importante salientar que essa separação dos dados deve ser feita de maneira al
 O classificador é quem garante que temos minimamente caracteristicas parecidas distribuídas entre treino e teste, supomos que nosso objetivo é classificar hipertensão, então o classificador vai garantir que tenha pelo menos 30% de amostras de pessoas com hipertensão distribuídas entre treino e teste. Vamos imaginar mais a fundo uma situação hipotética em que todas as caracteristicas de "pessoa com hipertensão" tenham sido colocadas nos dados de teste, e não sobrou nenhum exemplo de "pessoas com hipertensão" nos dados de treino, como o algoritimo vai acertar quem é hipertenso? impossível!
 
 # Método HoldOut
-É o modo mais simples de particionamento, mais rápido e menos custoso em termos de processamento porém não é indicado para grandes volumes de dados pois a menor parte dos dados (teste) pode não ter dado o suficiente para determinar o todo (treino) diminuindo sua acurácia. Esse método consiste em separar os dados (por default) em 70% de treinamento e 30% teste, mas isso é relativo, vai depender do seu volume de dados e deve ser ajustado visando a melhoria na predição.
+É o modo mais simples de particionamento, mais rápido e menos custoso em termos de processamento porém não é indicado para grandes volumes de dados pois a menor parte dos dados (teste) pode não ter dado o suficiente para determinar o todo (treino) diminuindo sua acurácia. Esse método consiste em separar os dados (por default) em 70% de treinamento e 30% teste, mas isso é relativo e pode ser ajustado.
 
 ![holdout](https://user-images.githubusercontent.com/115194365/213264298-6d8b6a25-ef72-49ce-9aa0-b809aff380a4.jpg)
 
